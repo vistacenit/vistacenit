@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Cenit | Fotografía de Perspectiva Única</title>
+    <meta name="description"
+        content="Vista Cenit ofrece fotografía artística y editorial desde una perspectiva cenital. Explora nuestras series y descubre una nueva dimensión de imágenes visuales.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Home Page Specifics */
+        .hero {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-text);
+        }
+
+        .hero-bg-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out, transform 6s ease-out;
+            transform: scale(1.05);
+        }
+
+        .hero-img.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: var(--color-white);
+            text-align: center;
+            padding: var(--space-md);
+            max-width: 800px;
+        }
+
+        .hero-claim {
+            margin-top: var(--space-xl);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: var(--fw-medium);
+            letter-spacing: 0.05em;
+        }
+
+        .hero-subclaim {
+            margin-top: var(--space-xs);
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            font-weight: var(--fw-light);
+            font-style: italic;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            margin-top: var(--space-lg);
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-white);
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            transition: all var(--transition-medium);
+            backdrop-filter: blur(4px);
+        }
+
+        .explore-btn:hover {
+            background-color: var(--color-white);
+            color: var(--color-text);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Vista Cenit" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="series.html">Series</a>
+                <a href="about.html">El Proyecto</a>
+                <a href="quote.html">Cotizar</a>
+                <a href="https://www.instagram.com/vista_cenit?igsh=MTJ6NW01bHh0bWFs" target="_blank"
+                    rel="noopener noreferrer" class="nav-icon" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-bg-slider" id="hero-slider">
+                <!-- One image from each series -->
+                <div class="hero-img active"
+                    style="background-image: linear-gradient(to bottom, rgba(11,27,61,0.2), rgba(11,27,61,0.6)), url('../Serie Mar/DJI_0453.JPG')">
+                </div>
+                <div class="hero-img"
+                    style="background-image: linear-gradient(to bottom, rgba(11,27,61,0.2), rgba(11,27,61,0.6)), url('../Serie Quitasoles/DJI_0536.JPG')">
+                </div>
+                <div class="hero-img"
+                    style="background-image: linear-gradient(to bottom, rgba(11,27,61,0.2), rgba(11,27,61,0.6)), url('../Serie Rocas/DJI_0622.JPG')">
+                </div>
+                <div class="hero-img"
+                    style="background-image: linear-gradient(to bottom, rgba(11,27,61,0.2), rgba(11,27,61,0.6)), url('../Serie Surf/IMG_8595.JPG')">
+                </div>
+            </div>
+
+            <div class="hero-content fade-in">
+                <h1 class="hero-claim">El mundo desde arriba,<br>una perspectiva distinta.</h1>
+                <h2 class="hero-subclaim">Cuadros de fotografía aérea a medida.</h2>
+                <a href="series.html" class="explore-btn">Explorar Series</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

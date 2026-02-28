@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Proyecto | Vista Cenit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-section {
+            padding-top: 150px;
+            padding-bottom: var(--space-xl);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-images {
+            position: relative;
+            width: 100%;
+            order: 2;
+        }
+
+        .about-img-main {
+            width: 85%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            filter: grayscale(10%);
+        }
+
+        .about-img-secondary {
+            position: absolute;
+            bottom: -10%;
+            right: 0;
+            width: 45%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border: 10px solid var(--color-bg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            filter: grayscale(10%);
+        }
+
+        .about-text {
+            order: 1;
+            text-align: left;
+            padding-right: var(--space-md);
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: var(--fw-light);
+        }
+
+        .about-manifesto {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            font-weight: var(--fw-light);
+            color: var(--color-text);
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(11, 27, 61, 0.7);
+            margin-bottom: var(--space-xl);
+        }
+
+        .about-actions {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            transition: all var(--transition-medium);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-text);
+            color: var(--color-bg);
+            border: 1px solid var(--color-text);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--color-text);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--color-text);
+        }
+
+        @media (min-width: 900px) {
+            .about-layout {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 5rem;
+            }
+
+            .about-images {
+                order: 1;
+            }
+
+            .about-text {
+                order: 2;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Vista Cenit" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="series.html">Series</a>
+                <a href="about.html">El Proyecto</a>
+                <a href="quote.html">Cotizar</a>
+                <a href="https://www.instagram.com/vista_cenit?igsh=MTJ6NW01bHh0bWFs" target="_blank"
+                    rel="noopener noreferrer" class="nav-icon" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="about-section container fade-in">
+            <div class="about-layout">
+                <div class="about-images">
+                    <img src="../Serie Mar/DJI_0453.JPG" alt="Vista Cenit Serie Mar" class="about-img-main">
+                    <img src="../Serie Rocas/DJI_0622.JPG" alt="Vista Cenit Serie Rocas" class="about-img-secondary">
+                </div>
+                <div class="about-text">
+                    <h1 class="about-title">El Proyecto</h1>
+                    <p class="about-manifesto">
+                        Vista Cenit es un proyecto de fotografía tomada exclusivamente con drones, siempre desde la
+                        misma perspectiva: desde arriba, apuntando al cenit. Esta mirada nos permite apreciar la
+                        naturaleza y los espacios desde un ángulo distinto, revelando patrones, geometría, simetría y
+                        colores que a simple vista pasan desapercibidos.
+                    </p>
+                    <p class="about-description">
+                        Cada fotografía se transforma en un cuadro a medida. Trabajamos previa cotización, donde puedes
+                        personalizar tu pieza eligiendo el tamaño de impresión, el tipo de marco, el uso de paspartú y
+                        el tipo de vidrio, para que se adapte perfectamente a tu espacio.
+                    </p>
+                    <div class="about-actions">
+                        <a href="series.html" class="btn-primary">Ver Obras</a>
+                        <a href="quote.html" class="btn-secondary">Cotizar Cuadro</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

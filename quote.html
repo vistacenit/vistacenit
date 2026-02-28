@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizar | Vista Cenit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .quote-section {
+            padding-top: 150px;
+            padding-bottom: var(--space-xl);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .quote-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
+        }
+
+        .quote-desc {
+            color: rgba(11, 27, 61, 0.7);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quote-form {
+            background-color: var(--color-white);
+            padding: var(--space-lg);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-wrapper {
+            text-align: center;
+            margin-top: var(--space-md);
+        }
+
+        @media (min-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Vista Cenit" class="nav-logo-img">
+            </a>
+            <div class="nav-links">
+                <a href="series.html">Series</a>
+                <a href="about.html">El Proyecto</a>
+                <a href="quote.html">Cotizar</a>
+                <a href="https://www.instagram.com/vista_cenit?igsh=MTJ6NW01bHh0bWFs" target="_blank"
+                    rel="noopener noreferrer" class="nav-icon" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-instagram">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="quote-section container fade-in">
+            <div class="quote-header">
+                <h1 class="quote-title">Adquiere una Obra</h1>
+                <p class="quote-desc">
+                    Cada pieza se imprime bajo altos estándares de calidad Fine Art.
+                    Por favor, completa el siguiente formulario indicando la obra que te interesa y nos pondremos en
+                    contacto contigo a la brevedad con las opciones y valores.
+                </p>
+            </div>
+
+            <!-- Usando Formsubmit para envío directo al correo -->
+            <form action="https://formsubmit.co/vistacenit@gmail.com" method="POST" class="quote-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="visually-hidden" for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Tu Nombre Completo"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="visually-hidden" for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control"
+                            placeholder="Tu Correo Electrónico" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="visually-hidden" for="serie">Serie / Obra de Interés</label>
+                        <input type="text" id="serie" name="serie" class="form-control"
+                            placeholder="¿Qué obra o serie te interesa?">
+                    </div>
+                    <div class="form-group">
+                        <label class="visually-hidden" for="size">Tamaño Aproximado (opcional)</label>
+                        <select id="size" name="size" class="form-control">
+                            <option value="" disabled selected>Selecciona un tamaño (opcional)</option>
+                            <option value="Small">Pequeño (30x40 cm)</option>
+                            <option value="Medium">Mediano (50x70 cm)</option>
+                            <option value="Large">Grande (70x100 cm+)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="visually-hidden" for="message">Mensaje</label>
+                    <textarea id="message" name="message" class="form-control"
+                        placeholder="Cuéntanos un poco más sobre tu espacio o tus dudas..." required></textarea>
+                </div>
+
+                <div class="submit-wrapper">
+                    <button type="submit" class="btn">Solicitar Cotización</button>
+                </div>
+
+                <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: rgba(11,27,61,0.5);">
+                    También puedes contactarnos directamente a través de nuestro
+                    <a href="https://www.instagram.com/vista_cenit" target="_blank"
+                        style="color: var(--color-text); text-decoration: underline;">Instagram @vista_cenit</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <style>
+        /* Accesibilidad (Esconder labels visualmente pero mantenerlos para screen readers) */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+    <script>
+        // Prefill form from URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const obraOfInterest = params.get('obra');
+            if (obraOfInterest) {
+                const serieInput = document.getElementById('serie');
+                if (serieInput) {
+                    // Reemplaza los guiones bajos por espacios para que sea legible
+                    serieInput.value = obraOfInterest.replace(/_/g, ' ');
+                }
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

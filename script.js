@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 let slides = [imgSrc];
                 if (filename && gptMap[filename]) {
-                    slides.push("../gpt/" + gptMap[filename]);
+                    slides.push("images/gpt/" + gptMap[filename]);
                 }
 
                 slides.forEach((src, idx) => {

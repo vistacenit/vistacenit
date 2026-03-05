@@ -96,16 +96,19 @@
     <main class="main-content">
         <section class="quote-section container fade-in">
             <div class="quote-header">
-                <h1 class="quote-title">Adquiere una Obra</h1>
+                <h1 class="quote-title">Cotiza tu cuadro</h1>
                 <p class="quote-desc">
-                    Cada pieza se imprime bajo altos estándares de calidad Fine Art.
-                    Por favor, completa el siguiente formulario indicando la obra que te interesa y nos pondremos en
-                    contacto contigo a la brevedad con las opciones y valores.
+                    Cada pieza se imprime en máxima resolución y a la medida. Por favor, completa el siguiente
+                    formulario indicando la serie que te interesa y nos pondremos en contacto contigo a la brevedad con
+                    las opciones y valores.
                 </p>
             </div>
 
             <!-- Usando Formsubmit para envío directo al correo -->
             <form action="https://formsubmit.co/vistacenit@gmail.com" method="POST" class="quote-form">
+                <input type="hidden" name="_subject" value="¡Nueva solicitud de cotización - Vista Cenit!">
+                <input type="hidden" name="_template" value="table">
+
                 <div class="form-row">
                     <div class="form-group">
                         <label class="visually-hidden" for="name">Nombre Completo</label>
@@ -121,9 +124,14 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="visually-hidden" for="serie">Serie / Obra de Interés</label>
-                        <input type="text" id="serie" name="serie" class="form-control"
-                            placeholder="¿Qué obra o serie te interesa?">
+                        <label class="visually-hidden" for="serie">¿Qué serie te interesa?</label>
+                        <select id="serie" name="serie" class="form-control" required>
+                            <option value="" disabled selected>¿Qué serie te interesa?</option>
+                            <option value="Serie Mar">Serie Mar</option>
+                            <option value="Serie Quitasoles">Serie Quitasoles</option>
+                            <option value="Serie Rocas">Serie Rocas</option>
+                            <option value="Serie Surf">Serie Surf</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label class="visually-hidden" for="size">Tamaño Aproximado (opcional)</label>
@@ -170,15 +178,29 @@
         }
     </style>
     <script>
-        // Prefill form from URL parameter
+        // Prefill form from URL parameter if it matches a series
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
             const obraOfInterest = params.get('obra');
             if (obraOfInterest) {
-                const serieInput = document.getElementById('serie');
-                if (serieInput) {
-                    // Reemplaza los guiones bajos por espacios para que sea legible
-                    serieInput.value = obraOfInterest.replace(/_/g, ' ');
+                const serieSelect = document.getElementById('serie');
+                if (serieSelect) {
+                    // Si viene desde una obra específica, tratar de seleccionar la serie correspondiente
+                    if (obraOfInterest.includes('Mar')) {
+                        serieSelect.value = 'Serie Mar';
+                    } else if (obraOfInterest.includes('Quitasoles')) {
+                        serieSelect.value = 'Serie Quitasoles';
+                    } else if (obraOfInterest.includes('Rocas')) {
+                        serieSelect.value = 'Serie Rocas';
+                    } else if (obraOfInterest.includes('Surf')) {
+                        serieSelect.value = 'Serie Surf';
+                    }
+
+                    // Add the specific work interest into the textarea so it's not lost
+                    const msgBox = document.getElementById('message');
+                    if (msgBox && msgBox.value === "") {
+                        msgBox.value = "Me interesa cotizar la obra: " + obraOfInterest.replace(/_/g, ' ') + ".\n\n";
+                    }
                 }
             }
         });
